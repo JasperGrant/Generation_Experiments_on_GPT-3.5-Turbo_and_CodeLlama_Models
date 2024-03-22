@@ -1,0 +1,90 @@
+trivial,multiply, return a * b
+trivial,add, return a + b
+trivial,subtract, return a - b
+trivial,divide, return a / b
+trivial,power, return a ** b
+trivial,modulus, return a % b
+trivial,floor_divide, return a // b
+trivial,equals, return a == b
+trivial,not_equals, return a != b
+trivial,greater_than, return a > b
+trivial,less_than, return a < b
+trivial,greater_than_or_equal, return a >= b
+trivial,less_than_or_equal, return a <= b
+trivial,logical_and, return a and b
+trivial,logical_or, return a or b
+trivial,logical_not, return not a
+trivial,bitwise_and, return a & b
+trivial,bitwise_or, return a | b
+trivial,bitwise_xor, return a ^ b
+trivial,bitwise_not, return ~a
+trivial,bitwise_left_shift, return a << b
+trivial,bitwise_right_shift, return a >> b
+trivial,add_one, return a + 1
+trivial,subtract_one, return a - 1
+trivial,increment, return a += 1
+trivial,decrement, return a -= 1
+trivial,get_length, return len(a)
+trivial,get_type, return type(a)
+trivial,get_value, return a.data
+trivial,println, print(a + '\n')
+complex,starts_with_a, return a[0] == 'a'
+complex,has_repeated_substring, return any(a.count(a[i:i+2]) > 1 for i in range(len(a)))
+complex,vowel_count, return sum(1 for c in a if c in 'aeiou')
+complex,consonant_count, return sum(1 for c in a if c not in 'aeiou')
+complex,contains_consecutive_vowels, return any(a[i] in 'aeiou' and a[i+1] in 'aeiou' for i in range(len(a)-1))
+complex,is_palindrome,(lambda s: s == s[::-1])
+complex,contains_digit, return any(c.isdigit() for c in a)
+complex,contains_punctuation, return any(c in string.punctuation for c in a)
+complex,contains_uppercase, return any(c.isupper() for c in a)
+complex,numbers_to_words, return ' '.join(num2words(int(n)) for n in a.split())
+complex,words_to_numbers, return ' '.join(str(words2num(n)) for n in a.split())
+complex,remove_vowels, return ''.join(c for c in a if c not in 'aeiou')
+complex,remove_consonants, return ''.join(c for c in a if c in 'aeiou')
+complex,remove_digits, return ''.join(c for c in a if not c.isdigit())
+complex,remove_punctuation, return ''.join(c for c in a if c not in string.punctuation)
+complex,remove_uppercase, return ''.join(c for c in a if not c.isupper())
+complex,clamp, return max(min(a, b), c)
+complex,reverse, return a[::-1]
+complex,sort_by_reverse_ascii, return sorted(a, key=lambda x: x[::-1])
+complex,sort_by_reverse_length_without_spaces, return sorted(a, key=lambda x: len(x.replace(' ', '')), reverse=True)
+complex,sort_by_vowel_count, return sorted(a, key=lambda x: sum(1 for c in x if c in 'aeiou'))
+complex,sort_by_consonant_count, return sorted(a, key=lambda x: sum(1 for c in x if c not in 'aeiou'))
+complex,slice_pairs,(lambda x: [x[i:i+2] for i in range(len(x)-1)])
+complex,reverse_word_order,(lambda s: ' '.join([w[::-1] for w in s.split()]))
+complex,square_even_nums,(lambda n: list(map(lambda x: x ** 2, filter(lambda x: x % 2 == 0, range(n)))))
+complex,sort_by_char_sum,(lambda x: sorted(x, key=lambda y: sum(ord(c) for c in y))))
+complex,is_prime_check,(lambda x: [i for i in range(2, x) if x % i == 0] == [])
+complex,consecutive_diff_letters,(lambda s: all(ord(s[i]) - ord(s[i-1]) == ord(s[i+1]) - ord(s[i]) for i in range(1, len(s)-1)))
+complex,is_prime_check,(lambda x: all(x % i != 0 for i in range(2, int(x ** 0.5) + 1)))
+complex,get_number_of_words_from_file, return sum([len(line.split(" ") for line in open(a).read().split("\n")]
+very_complex,process_with_params,void fcn.140030b80(ulong param_1, ulong param_2, ulong param_3) { ulong uVar1; uVar1 = fcn.140030ae0(param_3); fcn.14002efc0(param_1, param_2, uVar1); return; }
+very_complex,call_function_with_parameters,void __thiscall fcn.005ac32c(uint *param_1, uint param_2, uint *param_3, uint param_4, uint param_5, uint param_6) { int32_t *in_EAX; int32_t iVar1; uint *puVar2; uint auStack_30 [8]; uint uStack_10; uint uStack_c; uint uStack_8; puVar2 = auStack_30; for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) { *puVar2 = *param_3; param_3 = param_3 + 1; puVar2 = puVar2 + 1; } uStack_10 = *param_1; uStack_c = param_1[1]; uStack_8 = param_1[2]; (**(*in_EAX + 0x14))(param_2, auStack_30, param_4, param_5, param_6); return; }
+very_complex,process_status_update,int32_t __thiscall fcn.0048264a(int32_t param_1, uint param_2) { int32_t iVar1; fcn.0047ae5b(); iVar1 = fcn.0047aedb(param_1 + 8, param_2, param_1); if (iVar1 == 0) { *(param_1 + 0x14) = 1; iVar1 = 0; *(param_1 + 0xc) = param_2; } else { *(param_1 + 0xc) = 0; *(param_1 + 0x14) = 0; } return iVar1; }
+very_complex,set_process_address,void fcn.1000c7ad(void) { int32_t in_EAX; fcn.1000cb20(); *(in_EAX + 0x54) = 0x100518a4; fcn.1001d775(in_EAX + 0x54); return; }
+very_complex,process_string_and_set_value,void __fastcall fcn.036f9ba8(int32_t param_1, char *param_2) { char cVar1; uint uVar2; uint *in_EAX; char *pcVar3; pcVar3 = param_2; do { if (param_1 == 0) break; param_1 = param_1 + -1; cVar1 = *pcVar3; pcVar3 = pcVar3 + 1; } while (cVar1 != '\0'); uVar2 = fcn.036f93ac(); if (param_2 != NULL) { fcn.036f68f8(); } fcn.036f943c(); *in_EAX = uVar2; return; }
+very_complex,swap_parameters,void __thiscall fcn.004961ec(uint param_1, uint param_2) { fcn.004ff6b8(param_2, param_1); return; }
+very_complex,process_array_elements,void fcn.00442272(int32_t param_1) { int32_t iVar1; uint32_t uVar2; uVar2 = 0; if (*(param_1 + 8) != 0) { do { iVar1 = *(*(param_1 + 4) + uVar2 * 4); if (iVar1 != 0) { fcn.00442253(iVar1); } uVar2 = uVar2 + 1; } while (uVar2 < *(param_1 + 8)); *(param_1 + 8) = 0; return; } *(param_1 + 8) = 0; return; }
+very_complex,call_function_and_reset_pointer,void __fastcall fcn.0041013f(int32_t param_1) { int32_t *piVar1; piVar1 = *(param_1 + 0x14); if (piVar1 != NULL) { (**(*piVar1 + 8))(piVar1); *(param_1 + 0x14) = 0; } return; }
+very_complex,update_memory_allocation,uint32_t __thiscall fcn.0042392a(int32_t param_1, uint32_t param_2) { uint32_t uVar1; uint32_t uVar2; uint32_t in_EAX; uint32_t uVar3; int32_t *unaff_EBX; uint32_t *unaff_EDI; if (in_EAX == 0) { uVar2 = *unaff_EDI; uVar3 = param_1 + 7U & 0xfffffff8; uVar1 = uVar2 + uVar3; if (uVar1 <= param_2) { *unaff_EDI = uVar1; return uVar2; } *unaff_EBX = *unaff_EBX + uVar3; } return in_EAX; }
+very_complex,remove_unreachable_blocks,void fcn.004029d2(void) { fcn.0040c020(4); return; }
+very_complex,matrix_transpose,lambda matrix: [[row[i] for row in matrix] for i in range(len(matrix[0]))]
+very_complex,flatten_nested_list,lambda nested_list: [item for sublist in nested_list for item in (flatten_nested_list(sublist) if isinstance(sublist, list) else [sublist])]
+very_complex,get_occurences_of_string_from_file,lambda file, string: sum([line.count(string) for line in open(file).read().split('\n')])
+very_complex,fibonacci,lambda n: n if n <= 1 else fibonacci_sequence(n - 1) + fibonacci_sequence(n - 2)
+very_complex,flatten_dictionary,lambda d, parent_key='': {parent_key + '.' + k if parent_key else k: v for kk, vv in d.items() for k, v in (flatten_dictionary(vv, kk).items() if isinstance(vv, dict) else [(kk, vv)])}
+very_complex,mean_squared_error,lambda actual, predicted: sum((actual[i] - predicted[i]) ** 2 for i in range(len(actual))) / len(actual)
+very_complex,quicksort,lambda arr: quicksort([x for x in arr[1:] if x < arr[0]]) + [arr[0]] + quicksort([x for x in arr[1:] if x >= arr[0]]) if arr else []
+very_complex,leibniz_pi_approximation,lambda n: sum((-1) ** i / (2 * i + 1) for i in range(n)) * 4
+very_complex,pairwise_slices,(lambda x: [x[i:i+2] for i in range(len(x)-1)])
+very_complex,reverse_words,(lambda s: ' '.join([w[::-1] for w in s.split()]))
+very_complex,square_even_numbers,(lambda n: list(map(lambda x: x ** 2, filter(lambda x: x % 2 == 0, range(n)))))
+very_complex,find_all_substrings_with_less_vowels,(lambda s: [s[i:j] for i in range(len(s)) for j in range(i+1, len(s)+1) if sum(1 for c in s[i:j] if c in 'aeiou') < 2])
+very_complex,consecutive_letter_difference,(lambda s: all(ord(s[i]) - ord(s[i-1]) == ord(s[i+1]) - ord(s[i]) for i in range(1, len(s)-1)))
+very_complex,contains_len_3_palindrome, return any(a[i:i+3] == a[i:i+3][::-1] for i in range(len(a)-2))
+very_complex,nonlinear_sequence_generator,(lambda x: [x[i:i+2] for i in range(len(x)-1)])
+very_complex,lexical_reversal_engine,(lambda s: ' '.join([w[::-1] for w in s.split()]))
+very_complex,even_squared_filter,(lambda n: list(map(lambda x: x ** 2, filter(lambda x: x % 2 == 0, range(n)))))
+very_complex,find_all_substrings_with_more_consonants,(lambda s: [s[i:j] for i in range(len(s)) for j in range(i+1, len(s)+1) if sum(1 for c in s[i:j] if c not in 'aeiou') > 2])
+very_complex,consecutive_letter_difference,(lambda s: all(ord(s[i]) - ord(s[i-1]) == ord(s[i+1]) - ord(s[i]) for i in range(1, len(s)-1)))
+very_complex,get_value_divided_by_sum_of__even_digits,(lambda n: n / sum(int(d) for d in str(n) if int(d) % 2 == 0))
